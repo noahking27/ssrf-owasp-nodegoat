@@ -15,9 +15,6 @@ function ResearchHandler(db) {
             const url = req.query.url + req.query.symbol;
             console.log('URL REQUEST: ', url)
             return needle.get(url, (error, newResponse, body) => {
-                if (error) {
-                    res.send(404)
-                } 
                 if (!error && newResponse.statusCode === 200) {
                     res.writeHead(200, {
                         "Content-Type": "text/html"
